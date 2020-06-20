@@ -1,3 +1,10 @@
+# Aim
+- Create functionality to upload reciept details to co-op
+
+# Links:
+- https://medium.com/panya-studio-engineering/eliminating-manual-data-entry-using-ocr-to-convert-images-to-text-tesseract-js-react-1099d20a4f4
+- https://membership.coop.co.uk/claim-rewards
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
