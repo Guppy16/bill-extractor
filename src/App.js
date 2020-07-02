@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import "./App.css";
 // var Tesseract = window.Tesseract;
 
@@ -10,22 +10,32 @@ export default function App() {
   const [docs, setDocs] = useState([]);
 
   // Create a URL for each file uploaded
-  function handleChange(event) {
+  const handleChange = (event) => {
     if (event.target.files[0]) {
-      var uploads = [];
+      var uploadURLS = [];
       for (var key in event.target.files) {
         if (!event.target.files.hasOwnProperty(key)) continue;
         let upload = event.target.files[key];
-        uploads.push(URL.createObjectURL(upload));
+        uploadURLS.push(URL.createObjectURL(upload));
       }
-      setUploads(uploads);
+      setUploads(uploads.concat(uploadURLS));
     } else {
       setUploads([]);
     }
   }
 
+  const reset = useCallback(() => {
+    setDocs([])
+    setPatterns([])
+    console.log(docs)
+  }, [])
+
   // Generate text through tesseract
-  function generateText() {
+  const generateText = () => {
+    // Reset docs and patterns
+    reset();    
+    setDocs([]);
+    console.log(docs)
     uploads.forEach((upload, i) => {
       console.log("HERE")
       console.log(upload);
@@ -51,7 +61,7 @@ export default function App() {
             })
           );
         });
-    });
+    })
   }
 
   return (
