@@ -1,75 +1,52 @@
 # Aim
-- Create functionality to upload reciept details to co-op
+- Create a web app to upload reciept details to co-op [claim a receipt](https://membership.coop.co.uk/claim-rewards)
+
+## TODO
+- Setup google cloud authentication
+- Setup use of camera using [react-webcam](https://www.npmjs.com/package/react-webcam)
+- Create pages for different views
+- After taking a picture, the user should be allowed to crop out "personal details"
+
+## Notes
+- May need to set ENV variables:
+    - `set GOOGLE_APPLICATION_CREDENTIALS=[PATH/TO/SERVICE-ACCOUNT]`
+- Backend running of OCR is done through [Firebase OCR tutorial](https://cloud.google.com/functions/docs/tutorials/ocr)
+    - NOTE: Currently set unauthenticated access
+    - Firebase functions were deployed using [sample git repo](https://github.com/GoogleCloudPlatform/nodejs-docs-samples) in /functions/ocr/app
+    - To view firebase functions `gcloud functions list`
+    - To view function details `gcloud functions describe [funcName]`
+
 
 # Links:
-- https://medium.com/panya-studio-engineering/eliminating-manual-data-entry-using-ocr-to-convert-images-to-text-tesseract-js-react-1099d20a4f4
-- https://membership.coop.co.uk/claim-rewards
+- React hooks [cheat sheet](https://blog.logrocket.com/react-hooks-cheat-sheet-unlock-solutions-to-common-problems-af4caf699e70/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Coop claim receipt page](https://membership.coop.co.uk/claim-rewards)
+
+
+---
+
+## Old links
+Old links that are likely not needed
+- [Ocr using tesseract](https://medium.com/panya-studio-engineering/eliminating-manual-data-entry-using-ocr-to-convert-images-to-text-tesseract-js-react-1099d20a4f4)
+- 
+
+---
+
+## Resources
+This was copied from [my-web-app] repo
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [Deploy to Firebase](https://github.com/marketplace/actions/github-action-for-firebase)
+- [`npm run build` fails to minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- `npm start`
+- `npm test` See [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more info
+- `npm run build`
+- `npm run eject`

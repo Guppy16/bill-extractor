@@ -4,7 +4,7 @@ import "./App.css";
 
 import Tesseract from "tesseract.js";
 
-export default function App() {
+export default function AppTesseract() {
   const [uploads, setUploads] = useState([]);
   const [patterns, setPatterns] = useState([]);
   const [docs, setDocs] = useState([]);
