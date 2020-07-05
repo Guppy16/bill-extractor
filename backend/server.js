@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
 });
 
 // USE functions to attach to headers
+// May not be needed
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URI);
   res.header("Access-Control-Allow-Headers", "Content-Type, Accept");
@@ -44,13 +45,30 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/GetOCRText", (req, res) => {
-  console.log("Getting OCR text from bucket")
-  const fileName = req.query.file_name;
-  fileName ? console.log(fileName) : res.status(412).send("fileName not specified");
+// GET request for OCR text
+app.get("/GetOCRText", async (req, res) => {
+  console.log("Getting OCR text from bucket");
+  const fileName = req.query.file_name + "_to_en.txt";
+  fileName
+    ? console.log(fileName)
+    : res.status(412).send("file_name not specified");
   try {
     const file = storage.bucket(txtBucket).file(fileName);
-    res.json(file);
+
+    // Check if file exists
+    const exists = await file.exists();
+    if (!exists[0]) {
+      res.status(412).send("File doesn't exist");
+    } else {
+      // Read from file and send it
+      const chunks = [];
+      file
+        .createReadStream()
+        .on("error", (err) => res.status(500).send("Error " + err))
+        .on("response", (res) => {})
+        .on("end", () => res.status(200).send(JSON.stringify(Buffer.concat(chunks).toString())))
+        .on("data", (chunk) => chunks.push(chunk));
+    }
   } catch (err) {
     console.error(err);
     res.status(500).send("Error " + err);

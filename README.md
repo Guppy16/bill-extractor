@@ -22,13 +22,14 @@
 
 ## Frontend
 - package dependencies are managed using `yarn`
+- Set backend uri `REACT_APP_BACKEND_URI = http://localhost:5000`
 
 ## Backend
 - package dependencies are managed using `npm`
 - When running on localhost, ENV variables will need to be setup:
   - `GOOGLE_APPLICATION_CREDENTIALS=[PATH/TO/SERVICE-ACCOUNT.json]`
 - Created a REST API to get text from bucket storage
-  - To access the text, use http://localhost:5000/GetOCRText?file_name=img4.jpg , where `img4.jpg` can be replaced by the image name
+  - To access the text, use http://localhost:5000/GetOCRText?file_name=img4.jpg
 
 ## Google Cloud Backend
 

@@ -1,3 +1,5 @@
+// DEPRACATED
+
 // Imports the Google Cloud client library.
 const { Storage } = require("@google-cloud/storage");
 
