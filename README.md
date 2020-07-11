@@ -43,8 +43,15 @@
 # Links:
 
 - React hooks [cheat sheet](https://blog.logrocket.com/react-hooks-cheat-sheet-unlock-solutions-to-common-problems-af4caf699e70/)
+- Package to [send files](https://www.npmjs.com/package/multer)
+
+- Google bucket manipulation [docs](https://googleapis.dev/nodejs/storage/latest/Bucket.html#upload) or [this](https://cloud.google.com/storage/docs/downloading-objects#storage-download-object-nodejs)
 
 - Co-op receipt claim [page](https://membership.coop.co.uk/claim-rewards)
+
+- Links for attempting to fill forms in another site:
+  - Writing an extension to [auto-fill a form](https://medium.com/@mehwash.patel90/learn-to-write-your-own-simple-chrome-extension-5bea7d768629)
+  - [stackoverflow page with other references](https://stackoverflow.com/questions/21722569/how-to-fill-another-websites-form-with-the-data-in-my-own-website)
 
 ---
 
