@@ -29,3 +29,4 @@ guppy*.json
 
 # Secret Files
 .*
+node_modules

@@ -3,7 +3,6 @@
 - Create a web app to upload reciept details to co-op [claim a receipt](https://membership.coop.co.uk/claim-rewards)
 
 ## TODO
-
 - setup firebase to run on bill-extract.guppy16.ml
 - Setup github to deploy to firebase
 - Backend
@@ -12,6 +11,7 @@
     - downloading text
     - post the relevant details to Co-op
   - Process text to extract key information
+  - Somehow inject data into website
 - Frontend
   - Redo frontend to support backend REST API
   - Setup use of camera using [react-webcam](https://www.npmjs.com/package/react-webcam)
@@ -45,6 +45,8 @@
 - React hooks [cheat sheet](https://blog.logrocket.com/react-hooks-cheat-sheet-unlock-solutions-to-common-problems-af4caf699e70/)
 
 - Co-op receipt claim [page](https://membership.coop.co.uk/claim-rewards)
+
+- [Deploying multiple websites to firebase hosting](https://www.youtube.com/watch?v=NrkFBmBFA6k)
 
 ---
 
