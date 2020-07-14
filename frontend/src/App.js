@@ -8,9 +8,8 @@ export default function App() {
 
   // Create a URL for each file uploaded
   const handleUploadLocal = (event) => {
-    {
-      /* Maybe delete the image after 30 mins? */
-    }
+    /* Maybe delete the image after 30 mins? */
+
     console.log(event.target.files);
 
     // Store data about first file
@@ -48,7 +47,7 @@ export default function App() {
       }
     );
     console.log(res_upload);
-    if (res_upload.status != 200) {
+    if (res_upload.status !== 200) {
       setText("Something went wrong uploading to bucket");
       return;
     }
@@ -58,7 +57,7 @@ export default function App() {
       process.env.REACT_APP_BACKEND_URI + `/ImageOCR?file_name=` + imgData.name,
       { method: "GET" }
     );
-    if (res_download.status == 200) {
+    if (res_download.status === 200) {
       const txt = await res_download.json();
       console.log(txt);
       setText(txt);

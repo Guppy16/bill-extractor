@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "bill-extract",
-    "public": "frontend/public",
+    "public": "frontend/build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -10,7 +10,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "app"
+        "destination": "billExtractBackend"
       }
     ]
   },
